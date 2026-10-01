@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CORS Test</title>
+</head>
+
+<body>
+
+    <h1>Profile</h1>
+
+    <button onclick="getProfile()">Get Profile</button>
+
+    <p id="result"></p>
+
+    <script>
+
+        function getProfile() {
+
+            fetch("http://localhost:8080/profile")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("result").innerText = data;
+                })
+                .catch(error => {
+                    console.log(error);
+                });
+
+        }
+
+    </script>
+
+</body>
+
+</html>
